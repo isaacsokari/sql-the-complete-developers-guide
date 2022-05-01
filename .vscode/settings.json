@@ -9,7 +9,7 @@
       "port": 3306,
       "driver": "MySQL",
       "name": "mysql1",
-      "database": "sql_course",
+      "database": "talently",
       "username": "root",
       "password": ""
     },
@@ -19,7 +19,7 @@
       "port": 5432,
       "driver": "PostgreSQL",
       "name": "postgres1",
-      "database": "sql_course",
+      "database": "talently",
       "username": "ts",
       "password": ""
     }
