@@ -1,4 +1,5 @@
 {
+  "sqltools.autoOpenSessionFiles": false,
   "sqltools.connections": [
     {
       "mysqlOptions": {
