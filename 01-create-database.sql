@@ -2,8 +2,8 @@
 
 CREATE DATABASE If NOT EXISTS talently;
 
--- this can't be used on postgres, on mysql it lets safely create a db, no error if a db exists
+-- the above can't be used on postgres, on mysql it lets safely create a db, no error if a db exists
 
-CREATE DATABASE If NOT EXISTS talently;
+-- CREATE DATABASE talently;
 
 -- PS: `IF NOT EXISTS` can be used when creating tables on both mysql and postgres

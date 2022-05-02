@@ -8,21 +8,21 @@
       "previewLimit": 50,
       "server": "localhost",
       "port": 3306,
+      "askForPassword": true,
       "driver": "MySQL",
       "name": "mysql1",
       "database": "talently",
-      "username": "root",
-      "password": ""
+      "username": "root"
     },
     {
       "previewLimit": 50,
       "server": "localhost",
       "port": 5432,
+      "askForPassword": true,
       "driver": "PostgreSQL",
       "name": "postgres1",
       "database": "talently",
-      "username": "ts",
-      "password": ""
+      "username": "postgres"
     }
   ]
 }
