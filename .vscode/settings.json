@@ -2,6 +2,16 @@
   "sqltools.autoOpenSessionFiles": false,
   "sqltools.connections": [
     {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "postgres1",
+      "database": "sales_db",
+      "username": "postgres"
+    },
+    {
       "mysqlOptions": {
         "authProtocol": "default"
       },
@@ -11,18 +21,8 @@
       "askForPassword": true,
       "driver": "MySQL",
       "name": "mysql1",
-      "database": "talently",
+      "database": "sales_db",
       "username": "root"
-    },
-    {
-      "previewLimit": 50,
-      "server": "localhost",
-      "port": 5432,
-      "askForPassword": true,
-      "driver": "PostgreSQL",
-      "name": "postgres1",
-      "database": "talently",
-      "username": "postgres"
     }
   ]
 }
