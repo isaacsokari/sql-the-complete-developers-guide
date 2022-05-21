@@ -5,11 +5,11 @@
       "previewLimit": 50,
       "server": "localhost",
       "port": 5432,
-      "askForPassword": true,
       "driver": "PostgreSQL",
       "name": "postgres1",
-      "database": "sales_db",
-      "username": "postgres"
+      "database": "relations",
+      "username": "postgres",
+      "password": "password"
     },
     {
       "mysqlOptions": {
@@ -18,11 +18,11 @@
       "previewLimit": 50,
       "server": "localhost",
       "port": 3306,
-      "askForPassword": true,
       "driver": "MySQL",
       "name": "mysql1",
-      "database": "sales_db",
-      "username": "root"
+      "database": "relations",
+      "username": "root",
+      "password": "password"
     }
   ]
 }
