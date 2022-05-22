@@ -40,14 +40,14 @@ Note: More Aggregate functions can be found in the docs
 e.g.
 
 ```sql
--- this should fail as the booking_date isn't an aggregated column
-SELECT booking_date, SUM(num_guests)
-FROM bookings;
+  -- this should fail as the booking_date isn't an aggregated column
+  SELECT booking_date, SUM(num_guests)
+  FROM bookings;
 
--- this works by grouping similar booking dates
-SELECT booking_date, SUM(num_guests)
-FROM bookings
-GROUP BY booking_date;
+  -- this works by grouping similar booking dates
+  SELECT booking_date, SUM(num_guests)
+  FROM bookings
+  GROUP BY booking_date;
 ```
 
 Note:
@@ -56,11 +56,47 @@ Note:
 - We can add multiple identifiers to the `GROUP BY` clause as shown below, but it'll increase the row count.
 
 ```sql
--- show # of guests, their payment methods and the dates they came in
-SELECT p.name, b.booking_date, SUM(b.num_guests)
-FROM payment_methods AS p
-INNER JOIN bookings AS b ON p.id = b.payment_id
-GROUP BY p.name, b.booking_date;
+  -- show # of guests, their payment methods and the dates they came in
+  SELECT p.name, b.booking_date, SUM(b.num_guests)
+  FROM payment_methods AS p
+  INNER JOIN bookings AS b ON p.id = b.payment_id
+  GROUP BY p.name, b.booking_date;
 ```
 
-## **GROUP BY & HAVING vs WHERE**
+## GROUP BY & HAVING vs WHERE
+
+### **WHERE vs HAVING**
+
+#### `WHERE`
+
+e.g.
+
+```sql
+  SELECT booking_date, COUNT(booking_date)
+  FROM bookings
+  WHERE amount_billed > 30
+  GROUP BY booking_date;
+```
+
+- is used to create filters for RAW DATA
+- doesn't contain any aggregation functions
+- is placed and performed before any `GROUP BY` statement
+
+#### `HAVING`
+
+e.g.
+
+```sql
+  SELECT booking_date, COUNT(booking_date)
+  FROM bookings
+  GROUP BY booking_date
+  HAVING SUM(amount_billed) > 30;
+```
+
+- is used to create filters for AGGREGATED DATA
+- it's positioned after `GROUP BY`
+
+Note:
+
+- If you need an aggregate function in your filter, use `HAVING`, and if you don't need one, use `WHERE`
+- You can use HAVING on raw data, but you shouldn't
