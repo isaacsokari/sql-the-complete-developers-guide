@@ -1,10 +1,10 @@
 # Notes
 
-## Data Normalization
+## **Data Normalization**
 
 This is done to prevent Update, Deletion and Insertion anomalies
 
-## UNION vs JOIN
+### UNION vs JOIN
 
 1. `UNION` clause combines multiple result sets into one result set by appending ROWS
    JOIN clause merges multiple tables into one result set by appending COLUMNS
@@ -40,7 +40,7 @@ For this example, if the address row is deleted, the corresponding user row is d
 
 ### Adding Foreign Key Constraints Via ALTER TABLE
 
-MySQL & Postgresql
+_( For MySQL & Postgresql)_
 
 ```sql
 ALTER TABLE <table_name>
@@ -49,7 +49,7 @@ ADD FOREIGN KEY <column_name> REFERENCES <related_table> (<related_column>) ON D
 
 ### Removing Foreign Key Constraints Via ALTER TABLE
 
-MySQL & Postgresql
+_( For MySQL & Postgresql)_
 
 ```sql
 ALTER TABLE <table_name>
@@ -62,7 +62,7 @@ This can be done like this:
 
 ### Adding with constraint name via CREATE TABLE:
 
-For Postgres
+_(For Postgres)_
 
 ```sql
 CREATE TABLE <table_name> (
@@ -70,7 +70,7 @@ CREATE TABLE <table_name> (
 );
 ```
 
-For MySQL
+_(For MySQL)_
 
 ```sql
 CREATE TABLE <table_name> (
@@ -83,7 +83,31 @@ The FOREIGN KEY part (i.e. FOREIGN KEY <constraint_name>) is only required if a 
 
 ### Adding with constraint name via ALTER TABLE:
 
+_( For MySQL & Postgresql)_
+
 ```sql
 ALTER TABLE <table_name>
 ADD CONSTRAINT <constraint_name> FOREIGN KEY <column_name> REFERENCES ... (see above)
 ```
+
+## Different Kinds of Data Relationships
+
+These include
+
+1. **One-to-Many (1:n)**
+
+   One record in table A has one or many related records in table B
+
+   e.g. an employee belongs to a company but a company has many employees
+
+2. **Many-to-Many**
+
+   One record in table A has one or many related tables in table B and vice versa
+
+   e.g. an employee is part of myltiple projects and every project has multiple employees assigned to it.
+
+3. **One-to-One (1:1)**
+
+   Every record in table A has only one record in table B and vice versa
+
+   e.g. an employee has only 1 intranet account and each intranet account belongs to only 1 employee
