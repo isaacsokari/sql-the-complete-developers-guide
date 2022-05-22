@@ -50,6 +50,17 @@ FROM bookings
 GROUP BY booking_date;
 ```
 
-Note: `DISTINCT` doesn't work as it doesn't aggregate data, but just removes duplicate rows from a column
+Note:
+
+- `DISTINCT` doesn't work as it doesn't aggregate data, but just removes duplicate rows from a column
+- We can add multiple identifiers to the `GROUP BY` clause as shown below, but it'll increase the row count.
+
+```sql
+-- show # of guests, their payment methods and the dates they came in
+SELECT p.name, b.booking_date, SUM(b.num_guests)
+FROM payment_methods AS p
+INNER JOIN bookings AS b ON p.id = b.payment_id
+GROUP BY p.name, b.booking_date;
+```
 
 ## **GROUP BY & HAVING vs WHERE**
