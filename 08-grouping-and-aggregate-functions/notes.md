@@ -100,3 +100,22 @@ Note:
 
 - If you need an aggregate function in your filter, use `HAVING`, and if you don't need one, use `WHERE`
 - You can use HAVING on raw data, but you shouldn't
+
+## Window Functions
+
+- These are similar to aggregate functions.
+- They allow us to apply aggregate functions with the same abilities e.g. SUM, COUNT etc without reducing the input of the underlying table to the result of the function operations to a single value. i.e. Aggregation function results are added to another table
+- They are added using `OVER()` as shown in the example below
+
+```sql
+  SELECT booking_date, amount_tipped, SUM(amount_tipped) OVER ()
+  FROM bookings;
+```
+
+- they can use partitions (groups) for window functions too
+  Partitions are like groups, but for window functions
+
+```sql
+  SELECT booking_date, amount_tipped, SUM(amount_tipped) OVER (PARTITION BY booking_date)
+  FROM bookings;
+```
