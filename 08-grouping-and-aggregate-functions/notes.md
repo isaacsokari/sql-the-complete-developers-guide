@@ -119,3 +119,11 @@ Note:
   SELECT booking_date, amount_tipped, SUM(amount_tipped) OVER (PARTITION BY booking_date)
   FROM bookings;
 ```
+
+- we can use ORDER BY to incrementally apply the aggregate function as shown below
+
+```sql
+SELECT booking_date, amount_tipped, SUM(amount_tipped)
+OVER (PARTITION BY booking_date ORDER BY amount_billed)
+FROM bookings;
+```
