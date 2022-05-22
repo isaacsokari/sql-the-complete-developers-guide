@@ -37,3 +37,14 @@ Some functions include
 - LOWER() lowercases all characters
 - UPPER() uppercases all characters
 - TRIM( _LEADING|TRAILING|BOTH_ '<chars to remove>' FROM '<string to trim>')
+
+## Date Functions
+
+These functions perform operations on DATEs or TIMESTAMPs
+
+- [MySQL 8.0 Date and Time Functions](https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html)
+- [Postgres 14 Date and Time Functions](https://www.postgresql.org/docs/14/functions-datetime.html)
+
+Some include
+
+- EXTRACT() extracts part of a date
