@@ -34,3 +34,6 @@ These functions perform operations on strings
 Some functions include
 
 - CONCAT() concatenates strings
+- LOWER() lowercases all characters
+- UPPER() uppercases all characters
+- TRIM( _LEADING|TRAILING|BOTH_ '<chars to remove>' FROM '<string to trim>')

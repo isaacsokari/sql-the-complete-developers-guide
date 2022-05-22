@@ -7,5 +7,9 @@
 -- FROM memberships;
 
 -- you can concat a string and an integer
-SELECT CONCAT('$ ', price) AS price
-FROM memberships;
+-- SELECT CONCAT('$ ', price) AS price
+-- FROM memberships;
+
+-- you can filter using string functions
+SELECT * FROM memberships
+WHERE LENGTH(last_name) < 4;
