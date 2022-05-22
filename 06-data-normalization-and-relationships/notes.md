@@ -111,3 +111,5 @@ These include
    Every record in table A has only one record in table B and vice versa
 
    e.g. an employee has only 1 intranet account and each intranet account belongs to only 1 employee
+
+Note: Many-to-Many relationships need intermediate tables to reference them
