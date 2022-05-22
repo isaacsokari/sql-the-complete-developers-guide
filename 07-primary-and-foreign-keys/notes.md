@@ -55,3 +55,20 @@ Quick questions,
 
 - can the primary key be changed to another column or to a composite PK on a table after creation? i.e. using ALTER TABLE???
 - What's the practical difference between column constraints and table constraints?
+
+## Self-Referential Relationships
+
+These are relationships where rows are related to each other e.g. employees and supervisors, supervisors are employees as well and with self-referential relationships, we won't need to create another table for this
+
+It may look like this
+
+```sql
+CREATE TABLE employees (
+  id SERIAL PRIMARY KEY,
+  first_name VARCHAR(300) NOT NULL,
+  last_name VARCHAR(300) NOT NULL,
+  -- the supervisor_id can be null
+  -- it references itself omitting the primary key column
+  supervisor_id INT REFERENCES employees ON DELETE SET NULL
+)
+```
