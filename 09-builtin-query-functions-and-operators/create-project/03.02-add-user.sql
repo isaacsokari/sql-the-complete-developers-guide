@@ -21,5 +21,5 @@ VALUES (
     'Durns',
     199.99,
     1,
-    'male   '
+    TRIM('male   ')
 );

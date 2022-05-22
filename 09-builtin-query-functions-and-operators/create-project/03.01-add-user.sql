@@ -21,5 +21,5 @@ VALUES (
     'Doe',
     19.99,
     12,
-    'DivErs'
+    LOWER('DivErs')
 );
