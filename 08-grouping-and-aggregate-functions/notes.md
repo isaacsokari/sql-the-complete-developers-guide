@@ -35,4 +35,21 @@ Note: More Aggregate functions can be found in the docs
 
 ## Grouping
 
+`GROUP BY` is used to group data when aggregated and non-aggregated data are queried, so we can carry out aggregate functions.
+
+e.g.
+
+```sql
+-- this should fail as the booking_date isn't an aggregated column
+SELECT booking_date, SUM(num_guests)
+FROM bookings;
+
+-- this works by grouping similar booking dates
+SELECT booking_date, SUM(num_guests)
+FROM bookings
+GROUP BY booking_date;
+```
+
+Note: `DISTINCT` doesn't work as it doesn't aggregate data, but just removes duplicate rows from a column
+
 ## **GROUP BY & HAVING vs WHERE**
