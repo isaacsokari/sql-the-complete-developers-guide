@@ -15,6 +15,12 @@ and in postgres
 BEGIN TRANSACTION;
 ```
 
+or
+
+```sql
+BEGIN;
+```
+
 The changes are stored in memory, but persist to the database only if all of them pass.
 
 To save the changes, and terminate the transaction session in both, use
@@ -28,6 +34,23 @@ and to restore the database to it's state before the transaction and terminate t
 ```sql
 ROLLBACK;
 ```
+
+## Save Points
+
+These enable you to roll back to specific state while keeping the transaction running.
+You can create a save point within a transaction as
+
+```sql
+SAVEPOINT save_1;
+```
+
+You can roll back to `save_1` using
+
+```sql
+ROLLBACK TO save_1;
+```
+
+And you can carry on with your transaction
 
 Note:
 
